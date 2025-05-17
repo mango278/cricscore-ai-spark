@@ -1,5 +1,5 @@
 
-import { Calendar, List, Chart } from "lucide-react";
+import { Calendar, List, ChartLineUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -14,7 +14,7 @@ const features = [
     description: "Real-time updates visible to all spectators with responsive design for all devices.",
   },
   {
-    icon: <Chart className="h-8 w-8" />,
+    icon: <ChartLineUp className="h-8 w-8" />,
     title: "Expected Score Projection",
     description: "AI-driven prediction of final scores based on current run rate, wickets, and historical data.",
   },
