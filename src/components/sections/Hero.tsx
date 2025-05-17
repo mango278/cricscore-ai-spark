@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Zap } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -14,10 +15,11 @@ const Hero = () => {
             our advanced cricket scoring platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 h-auto font-medium shadow-lg hover:shadow-xl transition-all">
+              <Zap className="mr-2 h-5 w-5" />
               Try it Now
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto font-medium">
               Learn More
             </Button>
           </div>
@@ -83,8 +85,11 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
-            <span className="font-bold">AI</span>
+          <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center text-white shadow-lg animate-pulse">
+            <div className="flex items-center justify-center gap-1">
+              <Zap className="h-4 w-4" />
+              <span className="font-bold text-lg">AI</span>
+            </div>
           </div>
         </div>
       </div>

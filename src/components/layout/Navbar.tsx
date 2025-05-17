@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import { Menu, X } from "lucide-react";
@@ -8,46 +7,70 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center space-x-2">
+          <a href="#" className="flex items-center space-x-2">
             <div className="bg-primary rounded-md w-8 h-8 flex items-center justify-center">
               <span className="text-primary-foreground font-bold">CS</span>
             </div>
             <span className="font-heading font-bold text-xl hidden sm:inline-block">
               CricScore AI
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link 
-            to="/" 
+          <a 
+            href="#" 
             className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           >
             Home
-          </Link>
-          <Link 
-            to="#features" 
+          </a>
+          <a 
+            href="#features" 
             className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('features');
+            }}
           >
             Features
-          </Link>
-          <Link 
-            to="#demo" 
+          </a>
+          <a 
+            href="#demo" 
             className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('demo');
+            }}
           >
             Demo
-          </Link>
-          <Link 
-            to="#contact" 
+          </a>
+          <a 
+            href="#contact" 
             className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
           >
             Contact
-          </Link>
+          </a>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -74,34 +97,47 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="container md:hidden py-4">
           <nav className="flex flex-col space-y-4">
-            <Link 
-              to="/" 
+            <a 
+              href="#" 
               className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setMobileMenuOpen(false);
+              }}
             >
               Home
-            </Link>
-            <Link 
-              to="#features" 
+            </a>
+            <a 
+              href="#features" 
               className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('features');
+              }}
             >
               Features
-            </Link>
-            <Link 
-              to="#demo" 
+            </a>
+            <a 
+              href="#demo" 
               className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('demo');
+              }}
             >
               Demo
-            </Link>
-            <Link 
-              to="#contact" 
+            </a>
+            <a 
+              href="#contact" 
               className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
             >
               Contact
-            </Link>
+            </a>
             <Button 
               className="w-full mt-2" 
               variant="default"
