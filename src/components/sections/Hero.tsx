@@ -15,7 +15,11 @@ const Hero = () => {
             our advanced cricket scoring platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 h-auto font-medium shadow-lg hover:shadow-xl transition-all">
+            <Button 
+              size="lg" 
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 h-auto font-medium shadow-lg hover:shadow-xl transition-all"
+              onClick={() => window.open("https://v0-cric-score-ai-prototype.vercel.app/", "_blank")}
+            >
               <Zap className="mr-2 h-5 w-5" />
               Try it Now
             </Button>
